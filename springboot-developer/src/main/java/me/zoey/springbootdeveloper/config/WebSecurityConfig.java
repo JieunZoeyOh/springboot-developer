@@ -1,6 +1,6 @@
 package me.zoey.springbootdeveloper.config;
 
-import lombok.RequiredArgsConstructor;
+/*import lombok.RequiredArgsConstructor;
 import me.zoey.springbootdeveloper.service.UserDetailService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,12 +11,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-import static org.springframework.boot.autoconfigure.security.servlet.PathRequest.toH2Console;
+import static org.springframework.boot.autoconfigure.security.servlet.PathRequest.toH2Console;*/
 
-@RequiredArgsConstructor
-@Configuration
+//@RequiredArgsConstructor
+//@Configuration
 public class WebSecurityConfig {
-
+/*
     //스프링 시큐리티 기능 비활성화
     @Bean
     public WebSecurityCustomizer configure() {
@@ -59,5 +59,5 @@ public class WebSecurityConfig {
     @Bean //패스워드 인코더로 사용할 빈 등록
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
-    }
+    }*/
 }

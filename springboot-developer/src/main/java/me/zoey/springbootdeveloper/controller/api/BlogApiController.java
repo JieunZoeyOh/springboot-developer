@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -21,8 +22,9 @@ public class BlogApiController {
     private final BlogService blogService;
 
     @PostMapping("/api/articles")
-    public ResponseEntity<ArticleResponse> addArticle(@RequestBody AddArticleRequest request) {
-        Long savedId = blogService.save(request);
+    public ResponseEntity<ArticleResponse> addArticle(@RequestBody AddArticleRequest request,
+                                                      Principal principal) {
+        Long savedId = blogService.save(request, principal.getName());
 
         Article savedArticle = blogService.findById(savedId);
         return ResponseEntity.status(HttpStatus.CREATED)

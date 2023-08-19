@@ -28,10 +28,21 @@ public class User implements UserDetails {
 
     private String password;
 
+    @Column(unique = true)
+    private String nickname;
+
     @Builder
-    public User(String email, String password, String auth) {
+    public User(String email, String password, String nickname) {
         this.email = email;
         this.password = password;
+        this.nickname = nickname;
+    }
+
+    /**
+     * 사용자 이름 변경
+     */
+    public void updateNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     @Override //권한 반환
